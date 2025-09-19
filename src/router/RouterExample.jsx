@@ -15,7 +15,7 @@ const basename =
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </React.StrictMode>
