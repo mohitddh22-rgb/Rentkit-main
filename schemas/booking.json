@@ -1,0 +1,88 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "equipment_id": {
+      "type": "string",
+      "description": "ID of the rented equipment"
+    },
+    "renter_id": {
+      "type": "string",
+      "description": "ID of the person renting"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID of the equipment owner"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Rental start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Rental end date"
+    },
+    "total_days": {
+      "type": "number",
+      "description": "Total rental days"
+    },
+    "daily_rate": {
+      "type": "number",
+      "description": "Daily rate at time of booking"
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal before fees"
+    },
+    "platform_fee": {
+      "type": "number",
+      "description": "10% platform fee"
+    },
+    "total_cost": {
+      "type": "number",
+      "description": "Total amount paid by renter"
+    },
+    "owner_earnings": {
+      "type": "number",
+      "description": "Amount paid to owner (90%)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Booking status"
+    },
+    "pickup_method": {
+      "type": "string",
+      "enum": [
+        "collection",
+        "delivery"
+      ],
+      "description": "How equipment will be collected"
+    },
+    "delivery_address": {
+      "type": "string",
+      "description": "Delivery address if delivery selected"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Special instructions or notes"
+    }
+  },
+  "required": [
+    "equipment_id",
+    "renter_id",
+    "owner_id",
+    "start_date",
+    "end_date",
+    "total_cost"
+  ]
+}

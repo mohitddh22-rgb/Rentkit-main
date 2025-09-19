@@ -1,0 +1,100 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Equipment name/title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the equipment"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "power_tools",
+        "hand_tools",
+        "garden_tools",
+        "construction",
+        "automotive",
+        "cleaning",
+        "ladders_access",
+        "measuring",
+        "safety",
+        "other"
+      ],
+      "description": "Equipment category"
+    },
+    "price_per_day": {
+      "type": "number",
+      "description": "Daily rental price in GBP"
+    },
+    "location": {
+      "type": "string",
+      "description": "Equipment location (city, postcode area)"
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Full postcode for precise location"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of image URLs"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID of the equipment owner"
+    },
+    "availability": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether equipment is available for rental"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "excellent",
+        "very_good",
+        "good",
+        "fair"
+      ],
+      "default": "good",
+      "description": "Condition of the equipment"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Equipment brand/manufacturer"
+    },
+    "model": {
+      "type": "string",
+      "description": "Equipment model"
+    },
+    "deposit_required": {
+      "type": "number",
+      "default": 0,
+      "description": "Security deposit amount in GBP"
+    },
+    "min_rental_days": {
+      "type": "number",
+      "default": 1,
+      "description": "Minimum rental period in days"
+    },
+    "max_rental_days": {
+      "type": "number",
+      "default": 30,
+      "description": "Maximum rental period in days"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "category",
+    "price_per_day",
+    "location",
+    "owner_id"
+  ]
+}
